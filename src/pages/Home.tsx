@@ -66,8 +66,8 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/lommavy_hero_main_1780845807548.png"
-            alt="Lommavy Luxury"
+            src="https://i.ibb.co/VcRHcS21/Gemini-Generated-Image-2.png"
+            alt="Lommavy Luxury - Premium Handbags and Wigs"
             className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
