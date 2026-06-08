@@ -1,0 +1,6 @@
+{
+  "name": "Lommavy",
+  "description": "Lommavy specializes in premium ladies' luxury handbags, Brazilian wigs, and high-quality hair bundles, combining elegance and affordable luxury.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
