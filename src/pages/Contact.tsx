@@ -18,7 +18,7 @@ export default function Contact() {
     e.preventDefault();
     // In a real app, send to API or WhatsApp
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0ASubject: ${formData.subject}%0AMessage: ${formData.message}`;
-    window.open(`https://wa.me/233611423309?text=${message}`, '_blank');
+    window.open(`https://wa.me/27611423309?text=${message}`, '_blank');
   };
 
   return (
@@ -27,7 +27,7 @@ export default function Contact() {
         <div className="mb-12 md:mb-20 text-center max-w-2xl mx-auto">
           <span className="text-gold font-bold uppercase tracking-[0.35em] text-[8px] md:text-[10px] mb-4 block">Private Consultation</span>
           <h1 className="text-4xl xs:text-5xl md:text-7xl font-serif font-bold mb-6 italic leading-tight">We'd Love <br /> <span className="not-italic text-luxury-black">to Hear From You</span></h1>
-          <p className="text-black/40 text-sm md:text-base leading-relaxed italic">"Whether seeking the perfect silhouette or a signature glow, our concierge is here to curate your premium experience."</p>
+          <p className="text-black/60 text-sm md:text-base leading-relaxed italic">"Whether seeking the perfect silhouette or a signature glow, our concierge is here to curate your premium experience."</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
@@ -45,7 +45,7 @@ export default function Contact() {
                 </div>
                 <h4 className="font-serif font-bold text-lg md:text-xl mb-3 italic">Direct Path</h4>
                 <p className="text-sm md:text-base text-black/50 font-medium tracking-wide">061 142 3309</p>
-                <p className="text-[10px] text-black/30 mt-3 uppercase font-bold tracking-widest italic leading-tight">Mpumalanga Domestic <br />Support Line</p>
+                <p className="text-[10px] text-black/50 mt-3 uppercase font-bold tracking-widest italic leading-tight">Mpumalanga Domestic <br />Support Line</p>
               </div>
 
               <div className="p-8 md:p-10 bg-white rounded-[2rem] shadow-sm border border-black/5 group hover:border-gold/20 transition-all">
@@ -54,7 +54,7 @@ export default function Contact() {
                 </div>
                 <h4 className="font-serif font-bold text-lg md:text-xl mb-3 italic">Email Path</h4>
                 <a href="mailto:anterkyimavis5@gmail.com" className="text-sm md:text-base text-black/50 hover:text-gold transition-colors block break-all font-medium tracking-wide leading-tight">anterkyimavis5@gmail.com</a>
-                <p className="text-[10px] text-black/30 mt-3 uppercase font-bold tracking-widest italic leading-tight">Luxury Concierge <br />Department</p>
+                <p className="text-[10px] text-black/50 mt-3 uppercase font-bold tracking-widest italic leading-tight">Luxury Concierge <br />Department</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                   </div>
                   <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold">Facebook Page</span>
                 </a>
-                <a href="https://wa.me/233611423309" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 p-5 bg-white/5 rounded-2xl hover:bg-gold/20 active:scale-95 transition-all">
+                <a href="https://wa.me/27611423309" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 p-5 bg-white/5 rounded-2xl hover:bg-gold/20 active:scale-95 transition-all">
                   <div className="p-2.5 bg-white/5 rounded-lg">
                     <WhatsApp size={20} className="text-gold" />
                   </div>
@@ -101,7 +101,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/30 ml-6">Your Name</label>
+                  <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/50 ml-6">Your Name</label>
                   <input
                     type="text"
                     required
@@ -112,7 +112,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-4">
-                  <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/30 ml-6">Your Email</label>
+                  <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/50 ml-6">Your Email</label>
                   <input
                     type="email"
                     required
@@ -124,7 +124,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="space-y-4">
-                <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/30 ml-6">Inquiry Subject</label>
+                <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/50 ml-6">Inquiry Subject</label>
                 <input
                   type="text"
                   required
@@ -135,7 +135,7 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-4">
-                <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/30 ml-6">Deep Message</label>
+                <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/50 ml-6">Deep Message</label>
                 <textarea
                   required
                   rows={4}
@@ -160,7 +160,7 @@ export default function Contact() {
         <section className="mt-24 md:mt-40">
           <div className="text-center mb-16 md:mb-24">
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 italic">The Signature Studio</h2>
-            <p className="text-black/40 text-sm md:text-lg max-w-xl mx-auto italic">"A curated sanctuary in Mpumalanga, where luxury is experienced by appointment."</p>
+            <p className="text-black/60 text-sm md:text-lg max-w-xl mx-auto italic">"A curated sanctuary in Mpumalanga, where luxury is experienced by appointment."</p>
           </div>
           
           <div className="h-[400px] md:h-[600px] w-full rounded-[2.5rem] md:rounded-[5rem] overflow-hidden shadow-2xl relative ring-8 ring-white">
@@ -188,7 +188,7 @@ export default function Contact() {
                     <MapPin size={32} className="text-gold" />
                   </div>
                   <h3 className="text-2xl font-serif font-bold italic">Studio Location</h3>
-                  <p className="text-black/30 text-sm md:text-base italic leading-relaxed">Exact coordinates are shared following a confirmed consultation. We welcome you to the heart of Nelspruit.</p>
+                  <p className="text-black/50 text-sm md:text-base italic leading-relaxed">Exact coordinates are shared following a confirmed consultation. We welcome you to the heart of Nelspruit.</p>
                 </div>
               </div>
             )}

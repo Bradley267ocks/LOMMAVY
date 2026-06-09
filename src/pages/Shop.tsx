@@ -72,7 +72,7 @@ export default function Shop() {
         {/* Header */}
         <div className="mb-10 md:mb-16">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 capitalize">{activeCategory === 'all' ? 'The Collection' : activeCategory}</h1>
-          <p className="text-black/40 text-sm md:text-base max-w-xl italic leading-relaxed">Discover Lommavy’s curated selection of luxury fashion essentials and premium hair extensions, designed for elegance and versatility.</p>
+          <p className="text-black/60 text-sm md:text-base max-w-xl italic leading-relaxed">Discover Lommavy’s curated selection of luxury fashion essentials and premium hair extensions, designed for elegance and versatility.</p>
         </div>
 
         {/* Filters & Tools */}
@@ -100,7 +100,7 @@ export default function Shop() {
                 <option value="price-high">Price: High to Low</option>
                 <option value="rating">Top Rated Only</option>
               </select>
-              <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-black/30 pointer-events-none" size={14} />
+              <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-black/50 pointer-events-none" size={14} />
             </div>
 
             <button
@@ -159,7 +159,7 @@ export default function Shop() {
                 <Search size={48} className="text-black/10" />
               </div>
               <h2 className="text-2xl font-serif font-bold mb-2">No products found</h2>
-              <p className="text-black/40 text-sm">Try adjusting your filters or search query.</p>
+              <p className="text-black/60 text-sm">Try adjusting your filters or search query.</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
@@ -188,7 +188,7 @@ export default function Shop() {
                 <X className="text-red-500" size={32} />
               </div>
               <h3 className="text-2xl font-serif font-bold mb-3 italic">Product Not Found</h3>
-              <p className="text-black/40 text-sm mb-8 leading-relaxed italic">The requested collection item is either private, sold out, or removed from our catalog.</p>
+              <p className="text-black/60 text-sm mb-8 leading-relaxed italic">The requested collection item is either private, sold out, or removed from our catalog.</p>
               <button
                 onClick={closeProduct}
                 className="w-full py-4 bg-luxury-black text-white font-bold uppercase tracking-widest text-[10px] rounded-xl hover:bg-gold transition-colors"
@@ -243,7 +243,7 @@ export default function Shop() {
                           <Star key={i} size={14} fill={i < Math.floor(selectedProduct.rating) ? "currentColor" : "none"} />
                         ))}
                       </div>
-                      <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">{selectedProduct.rating} / 5.0</span>
+                      <span className="text-[10px] font-bold text-black/50 uppercase tracking-[0.2em]">{selectedProduct.rating} / 5.0</span>
                     </div>
                   </div>
 
@@ -288,7 +288,7 @@ export default function Shop() {
                 </div>
 
                 <div className="mt-12 lg:mt-auto pt-10">
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-black/30 italic mb-6">Complete the Collection</h4>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-black/50 italic mb-6">Complete the Collection</h4>
                   <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide -mx-2 px-2">
                     {products.filter(p => String(p.id) !== String(selectedProduct.id)).slice(0, 4).map(p => (
                       <Link 

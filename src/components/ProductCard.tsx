@@ -91,7 +91,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </Link>
         </div>
         
-        <p className="text-sm text-black/40 mb-6 line-clamp-2 leading-relaxed flex-grow italic">Discover the essence of {product.category} luxury with our signature {product.name}.</p>
+        <p className="text-sm text-black/60 mb-6 line-clamp-2 leading-relaxed flex-grow italic">Discover the essence of {product.category} luxury with our signature {product.name}.</p>
         
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-black/5">
           <span className="font-bold text-xl text-luxury-black">{formatPrice(product.price)}</span>

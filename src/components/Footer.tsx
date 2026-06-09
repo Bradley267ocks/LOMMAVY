@@ -39,7 +39,7 @@ export default function Footer() {
               <a href="https://facebook.com/MavisAnterkyi" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-gold/20 hover:text-gold active:scale-90 transition-all">
                 <Facebook size={20} />
               </a>
-              <a href="https://wa.me/233611423309" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-gold/20 hover:text-gold active:scale-90 transition-all">
+              <a href="https://wa.me/27611423309" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-gold/20 hover:text-gold active:scale-90 transition-all">
                 <WhatsApp size={20} />
               </a>
             </div>
@@ -80,7 +80,7 @@ export default function Footer() {
                 <div className="p-2.5 bg-gold/10 rounded-lg text-gold">
                   <WhatsApp size={16} />
                 </div>
-                <span className="font-medium tracking-wide">+233 61 142 3309</span>
+                <span className="font-medium tracking-wide">+27 61 142 3309</span>
               </li>
               <li className="flex items-start space-x-4">
                 <div className="p-2.5 bg-gold/10 rounded-lg text-gold flex-shrink-0">
@@ -92,14 +92,14 @@ export default function Footer() {
                 <div className="p-2.5 bg-gold/10 rounded-lg text-gold flex-shrink-0">
                   <MapPin size={16} />
                 </div>
-                <span className="leading-tight">Mpumalanga, Nelspruit<br /><span className="text-[10px] uppercase font-bold tracking-widest text-white/30">By Appointment Only</span></span>
+                <span className="leading-tight">Mpumalanga, Nelspruit<br /><span className="text-[10px] uppercase font-bold tracking-widest text-white/50">By Appointment Only</span></span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <p className="text-[10px] md:text-xs text-white/30 uppercase tracking-[0.2em] font-bold">© 2026 Lommavy Luxury. All Rights Reserved.</p>
+          <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-bold">© 2026 Lommavy Luxury. All Rights Reserved.</p>
           <div className="flex space-x-8 text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-bold">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>

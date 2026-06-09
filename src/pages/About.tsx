@@ -29,7 +29,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-lg md:text-xl">Curated Collection</h4>
-                  <p className="text-sm text-black/40 leading-relaxed">Every piece is handpicked for its quality and timeless appeal.</p>
+                  <p className="text-sm text-black/60 leading-relaxed">Every piece is handpicked for its quality and timeless appeal.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-6 p-6 bg-beige/40 rounded-2xl border border-black/5">
@@ -38,7 +38,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-lg md:text-xl">Empowering Beauty</h4>
-                  <p className="text-sm text-black/40 leading-relaxed">We strive to enhance the natural glow and confidence of our clients.</p>
+                  <p className="text-sm text-black/60 leading-relaxed">We strive to enhance the natural glow and confidence of our clients.</p>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function About() {
               ].map((stat, i) => (
                 <div key={i} className="p-8 bg-white rounded-3xl shadow-sm border border-black/5 hover:shadow-md transition-shadow">
                   <p className="text-3xl md:text-4xl font-serif font-bold text-gold mb-2 italic tracking-tight">{stat.val}</p>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/30">{stat.label}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -108,7 +108,7 @@ export default function About() {
           <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-6xl font-serif font-bold mb-8 italic">Define Your Presence</h2>
-            <p className="text-white/40 mb-12 max-w-xl mx-auto text-sm md:text-lg italic leading-relaxed">
+            <p className="text-white/60 mb-12 max-w-xl mx-auto text-sm md:text-lg italic leading-relaxed">
               "Every silhouette tells a story. Let Lommavy provide the signature that defines your journey toward timeless elegance."
             </p>
             <Link to="/shop" className="group inline-flex items-center px-10 py-5 bg-gold text-white font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-full hover:bg-gold-dark transition-all transform hover:scale-105 active:scale-95 shadow-xl">

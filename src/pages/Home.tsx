@@ -206,7 +206,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="font-bold text-sm">Money Back Guarantee</h4>
-                  <p className="text-[10px] text-black/40">7-day hassle-free returns on handbags.</p>
+                  <p className="text-[10px] text-black/60">7-day hassle-free returns on handbags.</p>
                 </div>
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 italic">The Lommavy Society</h2>
-            <p className="text-black/40 text-sm italic">Voices of satisfied elegance from across Mpumalanga.</p>
+            <p className="text-black/60 text-sm italic">Voices of satisfied elegance from across Mpumalanga.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -290,7 +290,7 @@ export default function Home() {
                   <img src={t.img} alt={t.name} className="w-12 h-12 rounded-full object-cover grayscale" />
                   <div>
                     <h5 className="font-bold text-xs uppercase tracking-widest">{t.name}</h5>
-                    <p className="text-[9px] text-black/30 uppercase">{t.role}</p>
+                    <p className="text-[9px] text-black/50 uppercase">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -304,7 +304,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-black/40 text-sm italic">Everything you need to know about our luxury collections.</p>
+            <p className="text-black/60 text-sm italic">Everything you need to know about our luxury collections.</p>
           </div>
 
           <div className="space-y-6">
@@ -346,7 +346,7 @@ export default function Home() {
               Subscribe
             </button>
           </form>
-          <p className="text-[10px] text-black/30 mt-8 uppercase tracking-[0.4em] italic leading-loose">Elegance is an investment. Start yours today.</p>
+          <p className="text-[10px] text-black/50 mt-8 uppercase tracking-[0.4em] italic leading-loose">Elegance is an investment. Start yours today.</p>
         </div>
       </section>
     </div>

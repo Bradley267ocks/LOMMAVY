@@ -118,16 +118,16 @@ export default function Navbar() {
                 
                 <div className="pt-8 mt-4 border-t border-white/5 flex flex-col space-y-6">
                   <div className="flex items-center justify-between px-2">
-                    <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white/30">Connect</span>
+                    <span className="text-[10px] uppercase font-bold tracking-[0.3em] text-white/50">Connect</span>
                     <div className="flex space-x-4">
                       <a href="#" className="p-3 bg-white/5 rounded-xl text-white/60 hover:text-gold transition-all"><Instagram size={20} /></a>
                       <a href="#" className="p-3 bg-white/5 rounded-xl text-white/60 hover:text-gold transition-all"><Facebook size={20} /></a>
-                      <a href="https://wa.me/233611423309" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-xl text-white/60 hover:text-gold transition-all"><WhatsApp size={20} /></a>
+                      <a href="https://wa.me/27611423309" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-xl text-white/60 hover:text-gold transition-all"><WhatsApp size={20} /></a>
                     </div>
                   </div>
                   <div className="bg-gold/10 p-5 rounded-2xl border border-gold/20">
                     <p className="text-[10px] uppercase font-bold tracking-widest text-gold mb-2">Concierge Line</p>
-                    <p className="text-lg font-serif font-bold text-white italic">+233 61 142 3309</p>
+                    <p className="text-lg font-serif font-bold text-white italic">+27 61 142 3309</p>
                   </div>
                 </div>
               </div>
