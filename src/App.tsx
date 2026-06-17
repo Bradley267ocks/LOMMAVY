@@ -2,12 +2,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import RecentlyPurchased from './components/RecentlyPurchased';
+import CartReminder from './components/CartReminder';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
 import Confirmation from './pages/Confirmation';
+import Policies from './pages/Policies';
 
 export default function App() {
   return (
@@ -22,11 +25,15 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/confirmation" element={<Confirmation />} />
+            <Route path="/shipping" element={<Policies />} />
+            <Route path="/policies" element={<Policies />} />
           </Routes>
         </main>
         <Footer />
         
         <WhatsAppButton />
+        <RecentlyPurchased />
+        <CartReminder />
       </div>
     </BrowserRouter>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, Instagram, Facebook, Send, MapPin, Phone as WhatsApp } from 'lucide-react';
 import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
+import SEO from '@/src/components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,10 @@ export default function Contact() {
 
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24 bg-beige min-h-screen overflow-x-hidden">
+      <SEO 
+        title="Contact Our Luxury Concierge | Lommavy"
+        description="Reach out to Lommavy for private consultations and inquiries about our premium handbags and hair collections in Nelspruit, South Africa."
+      />
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="mb-12 md:mb-20 text-center max-w-2xl mx-auto">
           <span className="text-gold font-bold uppercase tracking-[0.35em] text-[8px] md:text-[10px] mb-4 block">Private Consultation</span>

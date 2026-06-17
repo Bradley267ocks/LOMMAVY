@@ -1,10 +1,15 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Heart, Crown, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '@/src/components/SEO';
 
 export default function About() {
   return (
     <div className="pt-24 md:pt-32 pb-16 md:pb-24 min-h-screen bg-white">
+      <SEO 
+        title="About Lommavy | Our Heritage of Elegance"
+        description="Learn about Lommavy's commitment to providing premium luxury fashion accessories and hair products to women who inspire."
+      />
       {/* Hero Section */}
       <section className="px-6 mb-16 md:mb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -52,8 +57,8 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
               <img
-                src="https://i.ibb.co/DfCtP4Sm/Gemini-Generated-Image-glby8uglby8uglby-2-HAND-BAG-RED-R780.png"
-                alt="About Lommavy Luxury"
+                src="https://i.ibb.co/6JyrZ9WF/1781445851302.png"
+                alt="About Lommavy Luxury Crafted Bag"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
-import { ShoppingCart, Eye, Star, Heart } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { ShoppingCart, Eye, Star, Heart, ArrowRight } from 'lucide-react';
 import { Product } from '@/src/types';
 import { formatPrice, cn } from '@/src/lib/utils';
-import { Link } from 'react-router-dom';
 import { useCart } from '@/src/context/CartContext';
 import { useWishlist } from '@/src/context/WishlistContext';
 
@@ -12,6 +12,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const navigate = useNavigate();
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
 
@@ -23,6 +24,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       image: product.images[0],
       quantity: 1
     });
+  };
+
+  const handleBuyNow = () => {
+    handleAddToCart();
+    navigate('/checkout');
   };
 
   const isLiked = isInWishlist(product.id);
@@ -49,21 +55,30 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        {/* Quick Actions */}
-        <div className="absolute bottom-4 left-4 right-4 flex space-x-2 translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+        {/* Quick Actions - Always visible on mobile, hover-triggered on desktop */}
+        <div className="absolute bottom-4 left-4 right-4 flex flex-col space-y-2 translate-y-0 lg:translate-y-12 opacity-100 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 z-20">
+          <div className="flex space-x-2">
+            <button 
+              onClick={handleAddToCart}
+              className="flex-grow p-4 bg-white/95 backdrop-blur-md text-luxury-black rounded-xl hover:bg-gold hover:text-white transition-all shadow-lg flex items-center justify-center space-x-2 active:scale-95"
+            >
+              <ShoppingCart size={15} />
+              <span className="text-[9px] font-bold uppercase tracking-widest leading-none">Add to Bag</span>
+            </button>
+            <Link 
+              to={`/shop?id=${product.id}`}
+              className="p-4 bg-white/95 backdrop-blur-md text-luxury-black rounded-xl hover:bg-gold hover:text-white transition-all shadow-lg active:scale-95 flex items-center justify-center shrink-0"
+            >
+              <Eye size={15} />
+            </Link>
+          </div>
           <button 
-            onClick={handleAddToCart}
-            className="flex-grow p-4 bg-white text-luxury-black rounded-xl hover:bg-gold hover:text-white transition-all shadow-lg flex items-center justify-center space-x-2 active:scale-95"
+            onClick={handleBuyNow}
+            className="w-full p-4 bg-luxury-black text-white rounded-xl hover:bg-gold transition-all shadow-lg flex items-center justify-center space-x-2 active:scale-95"
           >
-            <ShoppingCart size={18} />
-            <span className="text-[10px] font-bold uppercase tracking-widest leading-none">Quick Add</span>
+            <span className="text-[9px] font-bold uppercase tracking-widest leading-none">Buy It Now</span>
+            <ArrowRight size={14} />
           </button>
-          <Link 
-            to={`/shop?${new URLSearchParams({...Object.fromEntries(new URLSearchParams(window.location.search)), id: product.id}).toString()}`}
-            className="p-4 bg-white text-luxury-black rounded-xl hover:bg-luxury-black hover:text-white transition-all shadow-lg active:scale-95 flex items-center justify-center"
-          >
-            <Eye size={18} />
-          </Link>
         </div>
 
         <button 
@@ -75,12 +90,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         >
           <Heart size={20} fill={isLiked ? "currentColor" : "none"} />
         </button>
-
-        {product.featured && (
-          <div className="absolute top-4 left-4 px-4 py-1.5 bg-gold text-white text-[9px] font-bold uppercase tracking-[0.2em] rounded-full shadow-lg">
-            Featured
-          </div>
-        )}
       </div>
 
       <div className="p-6 md:p-8 flex flex-col flex-grow">

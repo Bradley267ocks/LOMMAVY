@@ -43,8 +43,9 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       return original?.category?.toLowerCase() === 'handbags';
     });
 
-    if (hasWig && (p.id === '101' || p.id === '102')) return true;
-    if (hasBag && p.id === '103') return true;
+    if (hasWig && p.category === 'handbags') return true;
+    if (hasBag && p.category === 'wigs') return true;
+    if (cart.length === 0 && p.featured) return true;
     
     return false;
   }).slice(0, 2);

@@ -71,7 +71,7 @@ export default function Confirmation() {
           </div>
 
           <div className="mt-12 flex justify-center space-x-6">
-            <a href="#" className="p-4 bg-beige rounded-full text-black/30 hover:text-gold transition-all">
+            <a href="https://instagram.com/MavisAnterkyi" target="_blank" rel="noopener noreferrer" className="p-4 bg-beige rounded-full text-black/30 hover:text-gold transition-all">
               <Instagram size={20} />
             </a>
             <Link to="/" className="p-4 bg-beige rounded-full text-black/30 hover:text-gold transition-all">

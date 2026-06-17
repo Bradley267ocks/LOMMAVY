@@ -1,7 +1,20 @@
+import React, { useState, useEffect } from 'react';
 import { Instagram, Facebook, Phone as WhatsApp, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail) {
+      setSubscribed(true);
+      setNewsletterEmail('');
+      setTimeout(() => setSubscribed(false), 5000);
+    }
+  };
+
   return (
     <footer className="bg-luxury-black text-white pt-16 md:pt-24 pb-8 md:pb-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -13,15 +26,26 @@ export default function Footer() {
               <h3 className="text-3xl font-serif font-bold italic mb-4">Join the Inner Circle</h3>
               <p className="text-white/50 italic leading-relaxed text-sm">Receive exclusive collection previews and a <span className="text-gold font-bold">10% discount</span> on your first order.</p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="YOUR EMAIL ADDRESS"
-                className="flex-grow px-8 py-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-gold/50 transition-all text-xs font-bold uppercase tracking-widest"
-              />
-              <button className="px-10 py-4 bg-gold text-luxury-black font-bold uppercase tracking-[0.2em] text-[10px] rounded-xl hover:bg-white transition-all shadow-xl">
-                Subscribe
-              </button>
+            <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleSubscribe}>
+              {subscribed ? (
+                <div className="flex-grow py-4 text-gold font-bold uppercase tracking-widest text-xs animate-in fade-in slide-in-from-bottom-2">
+                  Welcome to the Inner Circle. check your inbox soon.
+                </div>
+              ) : (
+                <>
+                  <input
+                    type="email"
+                    required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="YOUR EMAIL ADDRESS"
+                    className="flex-grow px-8 py-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-gold/50 transition-all text-xs font-bold uppercase tracking-widest"
+                  />
+                  <button type="submit" className="px-10 py-4 bg-gold text-luxury-black font-bold uppercase tracking-[0.2em] text-[10px] rounded-xl hover:bg-white transition-all shadow-xl">
+                    Subscribe
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>
@@ -47,23 +71,21 @@ export default function Footer() {
 
           <div className="sm:pl-4">
             <h3 className="text-lg font-serif font-bold mb-8 text-gold italic">Quick Links</h3>
-            <ul className="space-y-5 text-sm md:text-base text-white/60">
-              <li><Link to="/" className="hover:text-gold transition-colors block py-1">Home</Link></li>
-              <li><Link to="/shop" className="hover:text-gold transition-colors block py-1">The Collection</Link></li>
-              <li><Link to="/about" className="hover:text-gold transition-colors block py-1">Our Story</Link></li>
-              <li><Link to="/contact" className="hover:text-gold transition-colors block py-1">Consultation</Link></li>
-              <li><Link to="/shipping" className="hover:text-gold transition-colors block py-1">Shipping & Returns</Link></li>
+            <ul className="space-y-4 text-sm md:text-base text-white/60">
+              <li><Link to="/" className="hover:text-gold transition-colors block py-0.5">Home</Link></li>
+              <li><Link to="/shop" className="hover:text-gold transition-colors block py-0.5">The Collection</Link></li>
+              <li><Link to="/about" className="hover:text-gold transition-colors block py-0.5">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors block py-0.5">Contact Us</Link></li>
             </ul>
           </div>
 
           <div className="sm:pl-4">
-            <h3 className="text-lg font-serif font-bold mb-8 text-gold italic">Categories</h3>
-            <ul className="space-y-5 text-sm md:text-base text-white/60">
-              <li><Link to="/shop?category=handbags" className="hover:text-gold transition-colors block py-1">Luxury Handbags</Link></li>
-              <li><Link to="/shop?category=wigs" className="hover:text-gold transition-colors block py-1">Brazilian Wigs</Link></li>
-              <li><Link to="/shop?category=bundles" className="hover:text-gold transition-colors block py-1">Hair Bundles</Link></li>
-              <li><Link to="/shop?sort=newest" className="hover:text-gold transition-colors block py-1">New Arrivals</Link></li>
-              <li><Link to="/shop?sort=featured" className="hover:text-gold transition-colors block py-1">Best Sellers</Link></li>
+            <h3 className="text-lg font-serif font-bold mb-8 text-gold italic">Legal & Policies</h3>
+            <ul className="space-y-4 text-sm md:text-base text-white/60">
+              <li><Link to="/policies?tab=shipping" className="hover:text-gold transition-colors block py-0.5">Shipping Policy</Link></li>
+              <li><Link to="/policies?tab=returns" className="hover:text-gold transition-colors block py-0.5">Returns Policy</Link></li>
+              <li><Link to="/policies?tab=privacy" className="hover:text-gold transition-colors block py-0.5">Privacy Policy</Link></li>
+              <li><Link to="/policies?tab=terms" className="hover:text-gold transition-colors block py-0.5">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -101,8 +123,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] font-bold">© 2026 Lommavy Luxury. All Rights Reserved.</p>
           <div className="flex space-x-8 text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-bold">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <Link to="/policies?tab=privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/policies?tab=terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>
