@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Search, 
@@ -9,6 +9,7 @@ import {
   ShoppingCart, 
   Star, 
   ArrowLeft, 
+  ArrowRight,
   ShieldCheck, 
   Truck, 
   Sparkles,
@@ -29,6 +30,7 @@ export default function Shop() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [sortBy, setSortBy] = useState('newest');
@@ -362,17 +364,7 @@ export default function Shop() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {products.filter(p => p.featured).slice(0, 4).map(p => (
-                <div key={p.id} className="group cursor-pointer" onClick={() => setSearchParams({ ...Object.fromEntries(searchParams), id: p.id })}>
-                  <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-white mb-6 shadow-sm border border-black/5 relative">
-                    <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover grayscale brightness-105 group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute top-4 left-4 p-2 bg-white/90 backdrop-blur-md rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
-                      <Heart size={14} className="text-gold" />
-                    </div>
-                  </div>
-                  <h4 className="font-serif font-bold text-lg italic text-luxury-black group-hover:text-gold transition-colors">{p.name}</h4>
-                  <p className="text-xs text-black/40 uppercase tracking-widest font-bold mt-1">{formatPrice(p.price)}</p>
-                </div>
+                <ProductCard key={p.id} product={p} />
               ))}
             </div>
           </div>
@@ -595,7 +587,24 @@ export default function Shop() {
                       className="flex-grow py-5 bg-gold hover:bg-gold-dark text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-[0_10px_30px_rgba(212,175,55,0.25)] transition-all active:scale-95 flex items-center justify-center space-x-3"
                     >
                       <ShoppingCart size={18} />
-                      <span>Experience Now (Add to Bag)</span>
+                      <span>Add to Bag</span>
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        addToCart({
+                          productId: selectedProduct.id,
+                          name: selectedProduct.name,
+                          price: selectedProduct.price,
+                          image: selectedProduct.images[0],
+                          quantity: 1
+                        });
+                        navigate('/checkout');
+                      }}
+                      className="flex-grow py-5 bg-luxury-black hover:bg-luxury-black/90 text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-xl transition-all active:scale-95 flex items-center justify-center space-x-3"
+                    >
+                      <span>Buy It Now</span>
+                      <ArrowRight size={16} />
                     </button>
                     
                     <button 

@@ -57,7 +57,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
               <img
-                src="https://i.ibb.co/6JyrZ9WF/1781445851302.png"
+                src="https://i.ibb.co/6JyrZ9WF/1781445851302-BLACK-HAND-BAG-R489.png"
                 alt="About Lommavy Luxury Crafted Bag"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
